@@ -1,0 +1,17 @@
+/* Error: @content is only allowed within mixin declarations.
+ *    ,
+ * 24 |     @content
+ *    |     ^^^^^^^^
+ *    '
+ *   Styles/mixins.sass 24:5  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: @content is only allowed within mixin declarations.\a    \2577 \a 24 \2502      @content\a    \2502      ^^^^^^^^\a    \2575 \a   Styles/mixins.sass 24:5  root stylesheet";
+}

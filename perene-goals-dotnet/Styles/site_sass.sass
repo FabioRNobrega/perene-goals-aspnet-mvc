@@ -1,0 +1,76 @@
+@import "./_variables"
+@import "./_mixins"
+
+@import "./components/hero"
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+
+body
+  font-size: 16px
+  background-color: var(--neutral-color-light)
+  font-family: var(--font-family-base)
+
+  a
+    text-decoration: none
+
+  ul
+    list-style: none
+
+.base-title
+  font-size: 27px
+  color: var(--secondary)
+  font-weight: 700
+  margin-bottom: 30px
+  font-family: var(--font-family-title)
+
+.base-text
+  color: var(--secondary)
+  font-family: var(--font-family-base)
+  font-size: 16px
+  font-weight: normal
+  margin: 20px 0px
+  line-height: 1.5em
+  text-indent: 20px
+  text-align: justify
+
+.base-text-light
+  color: var(--neutral-color-light)
+  font-family: var(--font-family-base)
+  font-size: 16px
+  font-weight: normal
+
+.title-space
+  margin-bottom: 0px
+  margin-top: 33px
+
+.base-background
+  background-color: var(--lighter-background-color)
+  border-radius: 10px
+  border: 1px solid var(--border-color)
+  box-shadow: var(--box-shadow)
+  backdrop-filter: blur(15px)
+  margin-bottom: 100px
+  padding: 40px 20px
+
+.base-content
+  & p
+    margin: 2% 0
+
+.base-container
+  @include container
+  padding: 100px 15px
+  margin-bottom: 100px
+  @include tablets-and-down
+    width: 90%
+
+.base-list-display
+  @include display-col
+
+  @include tablets-and-up
+    display: grid
+    grid-template-columns: 50% 50%
+    grid-auto-rows: 1fr
+    margin-top: 20px
