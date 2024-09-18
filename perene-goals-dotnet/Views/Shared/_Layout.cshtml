@@ -15,26 +15,39 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">perene_goals_dotnet</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
+        <nav>
+            <div class="top-navbar">
+                <div class="circle circle__left">
+                    <a asp-area="Identity" asp-page="/Account/Login">
+                        <div class="svg-icon circle__left--icon "></div>
+                    </a>
+                </div>
+                <div class="circle circle__right">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">
+                        <div class="svg-icon circle__right--icon "></div>
+                    </a>
                 </div>
             </div>
+
+            @* <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">perene_goals_dotnet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
+            asp-action="Privacy">Privacy</a>
+            </li>
+            </ul>
+            <partial name="_LoginPartial" />
+            </div>
+            </div> *@
         </nav>
     </header>
     <div class="container">
