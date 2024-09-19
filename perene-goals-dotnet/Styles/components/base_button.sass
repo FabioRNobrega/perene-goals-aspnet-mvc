@@ -1,0 +1,74 @@
+@import "./_variables"
+@import "./_mixins"
+    
+.base-button
+  border-radius: 5px
+  border: none
+  font-size: 15px
+  text-transform: uppercase
+  font-weight: 700
+  margin: 12px 0
+  padding: 12px
+  font-family:  var(--font-family-title)
+  transition: all .15s linear
+  cursor: pointer
+
+  &__small
+    margin: 0px 5px 0px 5px
+    font-size: 11px
+    padding: 10px
+
+  &__content 
+    @include display-row
+    justify-content: space-between
+    align-items: center
+    
+  &__dark 
+    width: 100%
+    background-color: var(--secondary-dark)
+    color: var(--primary)
+    box-shadow: inset 0px 0px 7px 3px var(--secondary)
+
+    &:hover 
+      background-color: var(--secondary)
+
+
+  &__light 
+    width: 100%
+    background-color: var(--primary)
+    color: var(--secondary)
+    box-shadow: inset 0px 0px 7px 3px var(--primary-light)
+
+    &:hover 
+      background-color: var(--primary-light)
+
+  &__solid
+    width: max-content
+    color: var(--secondary)
+    background: transparent
+    margin: 0
+    padding: 0
+
+    &--light
+      color: var(--primary)
+      background: transparent
+      margin: 0
+      padding: 0
+
+      &:hover 
+        color: var(--primary-light)
+
+    &:hover 
+      color: var(--primary-light)
+  
+
+  &__disabled 
+    width: 100%
+    background-color: var(--primary)
+    color: var(--primary-light)
+    box-shadow: inset 0px 0px 7px 3px var(--primary-light)
+    pointer-events: none
+    cursor: not-allowed
+
+    &:focus 
+      outline-color: transparent

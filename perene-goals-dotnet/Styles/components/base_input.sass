@@ -1,0 +1,114 @@
+@import "./_variables"
+@import "./_mixins"
+
+.input-container
+  @include display-row
+  align-items: center
+
+  .input-label
+    white-space: nowrap
+    margin-right: 10px 
+    font-family: var(--font-family-base)
+    color: var(--secondary)
+    font-size: 16px
+    font-weight: normal
+
+  .checkbox-input
+    padding: 0
+    height: initial
+    width: initial
+    margin-bottom: 0
+    display: none
+    cursor: pointer
+
+  .checkbox-label
+    margin: 8px 0
+    position: relative
+    cursor: pointer
+    font-family: var(--font-family-base)
+    
+    &--dark
+      color: var(--secondary)
+    &--light
+      color: var(--primary-light)
+
+    &:before
+      content: ''
+      -webkit-appearance: none
+      background-color: transparent
+      border-radius: 3px
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05)
+      padding: 10px
+      display: inline-block
+      position: relative
+      vertical-align: middle
+      cursor: pointer
+      margin-right: 5px
+      border: 3px solid var(--secondary)
+
+#checkbox-1:checked + .checkbox-label:after
+  content: ''
+  display: block
+  position: absolute
+  top: 2px
+  left: 9px
+  width: 6px
+  height: 14px
+  border: solid var(--secondary)
+  border-width: 0 2px 2px 0
+  transform: rotate(45deg)
+
+#checkbox-2:checked + .checkbox-label:after
+  content: ''
+  display: block
+  position: absolute
+  top: 2px
+  left: 9px
+  width: 6px
+  height: 14px
+  border: solid var(--secondary)
+  border-width: 0 2px 2px 0
+  transform: rotate(45deg)
+
+.input-error
+  font-family: var(--font-family-base)
+  color: var(--feedback-error) 
+  font-size: 12px
+  text-transform: capitalize
+  margin-top: -6px
+
+.input-text
+  width: 100%
+  border: 3px solid var(--secondary)
+  border-radius: 5px
+  padding: 12px 20px
+  margin: 8px 0
+  display: inline-block
+  box-sizing: border-box
+
+  &__checkbox
+    width: max-content
+
+  &__error 
+    border: 3px solid var(--feedback-error)
+
+.show-password
+  border: 1px solid var(--neutral-color-lighter)
+  border-radius: 3px
+  width: 40px
+  height: 40px
+  background: transparent
+  cursor: pointer
+
+  &__dark
+    color: var(--secondary)
+    &:hover
+     color: var(--primary-light) 
+  
+  &__light
+    border: 1px solid var(--neutral-color-lighter)
+    color: var(--neutral-color-light)
+
+    &:hover
+      color: var(--primary)
+      border-color: var(--primary)
