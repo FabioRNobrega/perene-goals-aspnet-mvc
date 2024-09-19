@@ -1,6 +1,6 @@
 @import "./_variables"
 @import "./_mixins"
-    
+
 .base-button
   border-radius: 5px
   border: none
@@ -9,37 +9,49 @@
   font-weight: 700
   margin: 12px 0
   padding: 12px
-  font-family:  var(--font-family-title)
+  font-family: var(--font-family-title)
   transition: all .15s linear
   cursor: pointer
+
+  &__icon
+    width: 25px
+    height: 25px
+    vertical-align: -0.15em
+    fill: var(--secondary)
+    overflow: hidden
+    background-color: var(--secondary)
+    display: inline-block
+
+    &--login
+      mask: url('/public/svg/next.svg') no-repeat 50% 50%
+      -webkit-mask-image: url('/public/svg/next.svg') no-repeat 50% 50%
 
   &__small
     margin: 0px 5px 0px 5px
     font-size: 11px
     padding: 10px
 
-  &__content 
+  &__content
     @include display-row
     justify-content: space-between
     align-items: center
-    
-  &__dark 
+
+  &__dark
     width: 100%
     background-color: var(--secondary-dark)
     color: var(--primary)
     box-shadow: inset 0px 0px 7px 3px var(--secondary)
 
-    &:hover 
+    &:hover
       background-color: var(--secondary)
 
-
-  &__light 
+  &__light
     width: 100%
     background-color: var(--primary)
     color: var(--secondary)
     box-shadow: inset 0px 0px 7px 3px var(--primary-light)
 
-    &:hover 
+    &:hover
       background-color: var(--primary-light)
 
   &__solid
@@ -55,14 +67,13 @@
       margin: 0
       padding: 0
 
-      &:hover 
+      &:hover
         color: var(--primary-light)
 
-    &:hover 
+    &:hover
       color: var(--primary-light)
-  
 
-  &__disabled 
+  &__disabled
     width: 100%
     background-color: var(--primary)
     color: var(--primary-light)
@@ -70,5 +81,5 @@
     pointer-events: none
     cursor: not-allowed
 
-    &:focus 
+    &:focus
       outline-color: transparent

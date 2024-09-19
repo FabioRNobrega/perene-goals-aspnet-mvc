@@ -32,18 +32,18 @@
                     </div>
                 </div>
                 <div>
-                    <button id="login-submit" type="submit" class="base-button base-button__light">Log in</button>
+                    <button id="login-submit" type="submit" class="base-button base-button__light">
+                        <div class="base-button__content"> 
+                            <label> sign in </label>
+                            <div class="base-button__icon base-button__icon--login"> </div>
+                        </div>
+                    </button>
                 </div>
-                <div>
+                <div class="card__footer">
                     <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword" class="link">Forgot your password?</a>
+                    Our <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="link">Register as a new user</a> to start achieving your goals.
                     </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="link">Register as a new user</a>
-                    </p>
-                    <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation" class="link">Resend email confirmation</a>
-                    </p>
+                    <a id="forgot-password" asp-page="./ForgotPassword" class="link">Forgot your password?</a>
                 </div>
             </form>
         </section>

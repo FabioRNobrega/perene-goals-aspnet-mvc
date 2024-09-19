@@ -1,6 +1,6 @@
 @import "./_variables"
 @import "./_mixins"
-    
+
 .card
   background-color: var(--secondary)
   border-style: hidden
@@ -16,18 +16,32 @@
   box-shadow: 0px 0px 10px var(--secondary)
   @include display-col
   @include tablets-and-up
-   margin: 10px 
-   justify-content: space-around
+    margin: 10px
+    justify-content: space-around
 
   &__title
-      font-size: 20px
+    font-size: 20px
+    font-family: var(--font-family-title)
+    font-weight: 700
+    color: var(--neutral-color-light)
+    margin-bottom: 10px
+
+  &__footer
+    color: var(--neutral-color-light)
+    font-family: var(--font-family-base)
+    @include display-row
+    justify-content: space-between
+    align-items: center
+
+    & strong, a
       font-family: var(--font-family-title)
-      font-weight: 700
-      color: var(--neutral-color-light)
-      margin-bottom: 10px
-  
+      color: var(--primary)
+
+    & a:hover
+      color: var(--primary-light)
+
   &__content, p
-      font-size: 16px
-      font-family: var(--font-family-base)
-      font-weight: 400
-      color: var(--neutral-color-light)
+    font-size: 16px
+    font-family: var(--font-family-base)
+    font-weight: 400
+    color: var(--neutral-color-light)
