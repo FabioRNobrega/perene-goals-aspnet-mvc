@@ -1,10 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - perene_goals_dotnet</title>
+    <title>Perene Goals</title>
     <link rel="icon" href="~/favicon.ico" />
     <link rel="stylesheet" href="~/css/site_sass.css" />
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@700&display=swap" rel="stylesheet">
@@ -18,9 +22,18 @@
         <nav>
             <div class="top-navbar">
                 <div class="circle circle__left">
-                    <a asp-area="Identity" asp-page="/Account/Login">
-                        <div class="svg-icon circle__left--icon "></div>
+        @if (SignInManager.IsSignedIn(User))
+                {
+                    <a asp-area="Identity" asp-page="/Account/Manage/Index">
+                        <div class="svg-icon circle__left--icon"></div>
                     </a>
+                }
+                else
+                {
+                    <a asp-area="Identity" asp-page="/Account/Login">
+                        <div class="svg-icon circle__left--icon"></div>
+                    </a>
+                }
                 </div>
                 <div class="circle circle__right">
                     <a asp-area="" asp-controller="Home" asp-action="Index">
@@ -28,39 +41,25 @@
                     </a>
                 </div>
             </div>
-
-            @* <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">perene_goals_dotnet</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-            <ul class="navbar-nav flex-grow-1">
-            <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-            asp-action="Privacy">Privacy</a>
-            </li>
-            </ul>
-            <partial name="_LoginPartial" />
-            </div>
-            </div> *@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - perene_goals_dotnet - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer >
+        <div class="bottom-navbar">
+            <a asp-area="" asp-controller="Home" asp-action="Index">
+                <div class="bottom-navbar__button">
+                    <div class="bottom-navbar__button--icon bottom-navbar__button--icon--home">   </div>
+                </div>
+            </a>
         </div>
     </footer>
+
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

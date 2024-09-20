@@ -1,0 +1,53 @@
+
+@import "./_variables"
+@import "./_mixins"
+
+.bottom-navbar
+    width: 100%
+    position: fixed
+    bottom: 0px
+    height: 57px
+    background: var(--secondary-dark)
+    box-shadow: 0px 0px 10px var(--secondary)
+    @include display-row
+    justify-content: center
+    @include desktop-and-up
+    justify-content: right
+
+    &__button
+        width: 90px
+        height: 90px
+        margin-top: -45px
+        border-radius: 100%
+        background: var(--primary)
+        box-shadow: inset 0px 0px 7px 3px var(--primary-light), 0px 0px 10px var(--secondary)
+        @include display-row
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        transition: 0.5s
+        color: var(--secondary)
+        @include desktop-and-up
+        margin-right: 50px
+
+        &:hover
+            width: 100px
+            height: 100px
+
+        &--icon
+            width: 45px
+            height: 45px
+            vertical-align: -0.15em
+            fill: var(--secondary)
+            overflow: hidden
+            background-color: var(--secondary)
+            display: inline-block
+
+            &--home
+                mask: url('/public/svg/home.svg') no-repeat 50% 50%
+                -webkit-mask-image: url('/public/svg/home.svg') no-repeat 50% 50%
+
+        &--disabled
+            color: var(--primary-light)
+            pointer-events: none
+            cursor: not-allowed
