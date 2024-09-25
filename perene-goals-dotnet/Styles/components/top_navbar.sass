@@ -26,7 +26,7 @@
     clip-path: circle(50% at 0 1%)
     background-image: linear-gradient(to right, var(--primary-light), var(--primary))
     padding: 15px 10px
-    &--icon
+    &--icon-user
       mask: url('/public/svg/user.svg') no-repeat 50% 50%
       -webkit-mask-image: url('/public/svg/user.svg') no-repeat 50% 50%
 
@@ -36,9 +36,13 @@
     display: flex
     padding: 15px 10px
     justify-content: end
-    &--icon
-      mask: url('/public/svg/home.svg') no-repeat 50% 50%
-      -webkit-mask-image: url('/public/svg/home.svg') no-repeat 50% 50%
+
+    &--icon-learning
+      mask: url('/public/svg/learning.svg') no-repeat 50% 50%
+      -webkit-mask-image: url('/public/svg/learning.svg') no-repeat 50% 50%
+    &--icon-exit
+      mask: url('/public/svg/exit.svg') no-repeat 50% 50%
+      -webkit-mask-image: url('/public/svg/exit.svg') no-repeat 50% 50%
 
   .svg-icon
     width: 25px

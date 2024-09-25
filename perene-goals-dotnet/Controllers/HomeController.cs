@@ -15,7 +15,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        var quote = new Tuple<string, string>("A goal without a plan is just a wish", "Antoine de Saint-Exupéry");
+        return View(quote);
     }
 
     public IActionResult Privacy()

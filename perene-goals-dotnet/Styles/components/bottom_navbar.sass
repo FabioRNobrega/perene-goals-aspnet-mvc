@@ -12,7 +12,7 @@
     @include display-row
     justify-content: center
     @include desktop-and-up
-    justify-content: right
+      justify-content: right
 
     &__button
         width: 90px
@@ -28,7 +28,7 @@
         transition: 0.5s
         color: var(--secondary)
         @include desktop-and-up
-        margin-right: 50px
+          margin-right: 50px
 
         &:hover
             width: 100px
@@ -43,7 +43,11 @@
             background-color: var(--secondary)
             display: inline-block
 
-            &--home
+            &-plus
+                mask: url('/public/svg/plus.svg') no-repeat 50% 50%
+                -webkit-mask-image: url('/public/svg/plus.svg') no-repeat 50% 50%
+
+            &-home
                 mask: url('/public/svg/home.svg') no-repeat 50% 50%
                 -webkit-mask-image: url('/public/svg/home.svg') no-repeat 50% 50%
 

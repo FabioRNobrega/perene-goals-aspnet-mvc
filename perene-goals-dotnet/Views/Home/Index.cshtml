@@ -1,9 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Perene Goals";
 }
+    @model Tuple<string, string>
 
 <main class="base-container">
     <div class="hero">
         <img class="hero__logo" src="~/public/logo/perene-goals.png" />
+    </div>
+
+    <div>
+        @await Html.PartialAsync("_BaseHero", Model)
     </div>
 </main>

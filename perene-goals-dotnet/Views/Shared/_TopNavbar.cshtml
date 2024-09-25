@@ -1,0 +1,41 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    var currentPath = Context.Request.Path;
+}
+
+<header>
+    <nav>
+        <div class="top-navbar">
+            <div class="circle circle__left">
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <a asp-area="Identity" asp-page="/Account/Manage/Index">
+                    <div class="svg-icon circle__left--icon-user"></div>
+                </a>
+            }
+            else
+            {
+                <a asp-area="Identity" asp-page="/Account/Login">
+                    <div class="svg-icon circle__left--icon-user"></div>
+                </a>
+            }
+            </div>
+            <div class="circle circle__right">
+            @if (currentPath == "/Identity/Account/Manage") {
+                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm">
+                    <a href="javascript:;" onclick="document.getElementById('logoutForm').submit()">
+                        <div class="svg-icon circle__right--icon-exit"></div>
+                    </a>
+                </form>
+            } else {
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <div class="svg-icon circle__right--icon-learning"></div>
+                </a>
+            }
+            </div>
+        </div>
+    </nav>
+</header>

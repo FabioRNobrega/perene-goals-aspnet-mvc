@@ -1,0 +1,36 @@
+   @using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    var currentPath = Context.Request.Path;
+}
+
+   
+<footer >
+    <div class="bottom-navbar">
+        @if(currentPath == "/Identity/Account/Login"){
+            <a asp-area="" asp-controller="Home" asp-action="Index">
+                <div class="bottom-navbar__button">
+                    <div class="bottom-navbar__button--icon bottom-navbar__button--icon-home">   </div>
+                </div>
+            </a>
+        } else {
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <div class="bottom-navbar__button">
+                        <div class="bottom-navbar__button--icon bottom-navbar__button--icon-plus">   </div>
+                    </div>
+                </a>
+            }
+            else
+            {
+            <a asp-area="Identity" asp-page="/Account/Login">
+                <div class="bottom-navbar__button">
+                    <div class="bottom-navbar__button--icon bottom-navbar__button--icon-plus">   </div>
+                </div>
+            </a>
+            }
+        }
+    </div>
+</footer>

@@ -1,8 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,48 +14,15 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="top-navbar">
-                <div class="circle circle__left">
-        @if (SignInManager.IsSignedIn(User))
-                {
-                    <a asp-area="Identity" asp-page="/Account/Manage/Index">
-                        <div class="svg-icon circle__left--icon"></div>
-                    </a>
-                }
-                else
-                {
-                    <a asp-area="Identity" asp-page="/Account/Login">
-                        <div class="svg-icon circle__left--icon"></div>
-                    </a>
-                }
-                </div>
-                <div class="circle circle__right">
-                    <a asp-area="" asp-controller="Home" asp-action="Index">
-                        <div class="svg-icon circle__right--icon"></div>
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <partial name="_TopNavbar" />
+
     <div class="container">
         <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer >
-        <div class="bottom-navbar">
-            <a asp-area="" asp-controller="Home" asp-action="Index">
-                <div class="bottom-navbar__button">
-                    <div class="bottom-navbar__button--icon bottom-navbar__button--icon--home">   </div>
-                </div>
-            </a>
-        </div>
-    </footer>
-
-
+    <partial name="_BottomNavbar" />
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

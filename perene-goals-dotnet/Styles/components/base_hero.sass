@@ -1,0 +1,56 @@
+
+@import "./_variables"
+@import "./_mixins"
+
+.banner 
+  position: relative
+  border-radius: 5px
+  overflow: hidden
+  height: 600px
+  @include display-col
+  align-items: center
+  justify-content: center
+  @include tablets-and-up
+    height: 400px
+  
+  &__image 
+    display: block
+    min-width: 100%
+    min-height: 100%
+    object-fit: cover
+
+
+  &__overlay
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: rgba(0,0,0,0.8 )
+    @include display-col
+    align-items: center
+    justify-content: center
+    
+    &--text 
+      color: #f2f2f2
+      text-align: center
+      padding: 15px
+
+      &-quote 
+        font-weight: normal
+        font-size: 28px
+        font-family: var(--font-family-base)
+        
+      &-author
+        font-size: 20
+        text-transform: uppercase
+        color: var(--primary)
+        font-family: var(--font-family-title)
+
+
+  
+  &__divider
+    width: 100%
+    height: 3px
+    margin: 10px 0
+    background: var(--primary)
