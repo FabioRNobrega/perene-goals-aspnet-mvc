@@ -1,36 +1,53 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Create Account";
 }
 
-<h1>@ViewData["Title"]</h1>
-
-<div class="row">
-    <div class="col-md-4">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
-            <hr />
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-floating">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
-                <label asp-for="Input.Email"></label>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-floating">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
-                <label asp-for="Input.Password"></label>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-floating">
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
-                <label asp-for="Input.ConfirmPassword"></label>
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
-        </form>
+<div class="base-container">
+  <div class="card">
+    <div  class="card__title">
+     <h3 class="title"> @ViewData["Title"]</h3>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+    <div class="card__content">
+            <section>
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="input-container">
+                    <input asp-for="Input.Email" class="input-text" autocomplete="email" placeholder="Email" aria-required="true" />
+                    <span asp-validation-for="Input.Email" class="input-text_error"></span>
+                </div>
+                <div class="input-container">
+                    <input asp-for="Input.Password" class="input-text" autocomplete="current-password" placeholder="Password" aria-required="true" />
+                    <span asp-validation-for="Input.Password" class="input-text_error"></span>
+                </div>
+                <div class="input-container">
+                    <input asp-for="Input.ConfirmPassword" class="input-text" autocomplete="new-password" placeholder="Confirm Password"aria-required="true" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="input-text_error"></span>
+                </div>
+                <div>
+                 <button id="registerSubmit" type="submit" class="base-button base-button__light">
+                  <div class="base-button__content"> 
+                            <label> create account </label>
+                            <div class="base-button__icon base-button__icon--login"> </div>
+                        </div>
+                 </button>
+                </div>
+                <div class="card__footer">
+                    <p>
+                        Our just <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" class="link"> Sing In </a> to start achieving your goals.
+                    <p>
+                    <div></div>
+                </div>
+            </form>
+        </section>
+    </div>
+  </div>
+</div>
+
+
+
+    @* <div class="col-md-6 col-md-offset-2">
         <section>
             <h3>Use another service to register.</h3>
             <hr />
@@ -60,8 +77,7 @@
 
         }
         </section>
-    </div>
-</div>
+    </div> *@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
