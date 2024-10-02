@@ -24,7 +24,7 @@
             }
             </div>
             <div class="circle circle__right">
-            @if (currentPath == "/Identity/Account/Manage") {
+            @if (currentPath.ToString().StartsWith("/Identity/Account/Manage")) {
                 <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm">
                     <a href="javascript:;" onclick="document.getElementById('logoutForm').submit()">
                         <div class="svg-icon circle__right--icon-exit"></div>

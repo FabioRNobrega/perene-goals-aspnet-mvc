@@ -1,0 +1,33 @@
+@import "./_variables"
+@import "./_mixins"
+
+.tabs
+    &__container
+        @include display-row
+        justify-content: space-between
+        @include mobile-and-down
+            overflow: auto
+            flex-wrap: wrap
+            align-items: flex-start
+            align-content: flex-start
+            justify-content: flex-start
+
+    &__container::-webkit-scrollbar
+        display: none
+
+    &__item
+        font-size: 20px
+        font-weight: 700
+        margin-bottom: 30px
+        font-family: var(--font-family-title)
+        @include mobile-and-down
+            width: 120px
+
+        &--link
+            color: var(--secondary)
+
+            &:hover
+                color: var(--primary)
+
+        & .active
+            color: var(--primary)

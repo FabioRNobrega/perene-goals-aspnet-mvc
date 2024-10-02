@@ -3,12 +3,14 @@
 
 @import "./components/hero"
 @import "./components/top_navbar"
+@import "./components/bottom_navbar"
 @import "./components/base_card"
 @import "./components/base_button"
 @import "./components/base_link"
 @import "./components/base_input"
-@import "./components/bottom_navbar"
+@import "./components/base_tabs"
 @import "./components/base_hero"
+@import "./components/base_code"
 
 *
   padding: 0
@@ -45,6 +47,9 @@ body::-webkit-scrollbar
   line-height: 1.5em
   text-indent: 20px
   text-align: justify
+
+  &__no-intent
+    text-indent: 0px
 
 .base-text-light
   color: var(--neutral-color-light)
@@ -91,3 +96,9 @@ body::-webkit-scrollbar
   font-family: var(--font-family-title)
   font-size: 35px
   color: var(--neutral-color-lighter)
+
+.display-col
+  @include display-col
+
+.display-row
+  @include display-row
