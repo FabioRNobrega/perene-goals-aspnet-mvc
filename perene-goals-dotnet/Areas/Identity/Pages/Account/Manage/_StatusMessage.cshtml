@@ -1,10 +1,22 @@
-﻿@model string
-
-@if (!String.IsNullOrEmpty(Model))
+﻿@if (!String.IsNullOrEmpty(Model))
 {
-    var statusMessageClass = Model.StartsWith("Error") ? "danger" : "success";
-    <div class="alert alert-@statusMessageClass alert-dismissible" role="alert">
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        @Model
+    var statusMessageClass = Model.StartsWith("Error") ? "error show" : "success show";
+    <div role="alert" class="message message__@statusMessageClass">
+        <div class="message__content">
+            <div class="message__content--context">
+                @Model
+            </div> 
+            <button type="button" class="message__content--action" aria-label="Close" onclick="hideAlert(this)"></button> 
+        </div>
     </div>
 }
+
+<script> 
+function hideAlert(button) {
+  var alert = button.parentNode.parentNode;
+  alert.classList.add('hide');
+    setTimeout(function() {
+     alert.style.display = "none";
+  }, 1010); 
+}
+</script>

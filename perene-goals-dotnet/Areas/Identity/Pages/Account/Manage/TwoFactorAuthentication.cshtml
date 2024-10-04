@@ -6,8 +6,8 @@
     ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
 }
 
-<partial name="_StatusMessage" for="StatusMessage" />
 <h3 class="base-title">@ViewData["Title"]</h3>
+<partial name="_StatusMessage" for="StatusMessage" />
 <div class="tabs__container display-col">
     @{
         var consentFeature = HttpContext.Features.Get<ITrackingConsentFeature>();
@@ -52,7 +52,7 @@
             }
             else
             {
-                <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="tabs__item tabs__item--link">Set up authenticator app</a>
+                <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="tabs__item tabs__item--link">Set up new authenticator app</a>
                 <a id="reset-authenticator" asp-page="./ResetAuthenticator" class="tabs__item tabs__item--link">Reset authenticator app</a>
             }
         }

@@ -1,0 +1,37 @@
+@import "./_variables"
+@import "./_mixins"
+
+.info
+    background-color: var(--neutral-color-dark)
+    color: var(--neutral-color-darker)
+    text-align: justify
+    overflow: hidden
+    padding: 25px
+    border-radius: 5px
+    margin: 50px auto
+    word-wrap: break-word
+    white-space: normal
+    word-break: normal
+    text-overflow: ellipsis
+    @include display-col
+    align-items: center
+    text-indent: 20px
+
+    &__icon
+
+        width: 40px
+        height: 40px
+        background-color: var(--neutral-color-darker)
+        mask: url('/public/svg/warning.svg') no-repeat 50% 50%
+        -webkit-mask-image: url('/public/svg/warning.svg') no-repeat 50% 50%
+
+    &__content
+        margin: 15px 0
+        & p a
+            line-height: 1.5em
+            color: var(--primary)
+            font-weight: 700
+        &--justify
+            text-indent: 20px
+        &--center
+            text-align: center

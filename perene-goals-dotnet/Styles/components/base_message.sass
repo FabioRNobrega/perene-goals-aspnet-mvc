@@ -1,0 +1,73 @@
+@import "./_variables"
+@import "./_mixins"
+
+.message
+  font-family: var(--font-family-base)
+  background-color: var(--neutral-color-light)
+  border-radius: 5px
+  font-size: 15px
+  font-weight: lighter
+  margin: 12px auto
+  padding: 5px
+
+  &__content
+    @include display-row
+    align-items: center
+    justify-content: space-between
+
+    &--context
+      display: flex
+      align-items: center
+
+      & p
+        margin: 0 0 0 20px
+
+    &--action
+      cursor: pointer
+      color: var(--secondary)
+      width: 18px
+      height: 18px
+      vertical-align: -0.15em
+      fill: var(--secondary)
+      overflow: hidden
+      background-color: var(--secondary)
+      display: inline-block
+      mask: url('/public/svg/close.svg') no-repeat 50% 50%
+      -webkit-mask-image: url('/public/svg/close.svg') no-repeat 50% 50%
+
+      &:hover
+        color: var(--primary)
+
+  &__error
+    color: var(--feedback-error)
+    border: solid 1px var(--feedback-error)
+
+  &__success
+    color: var(--feedback-success)
+    border: solid 1px var(--feedback-success)
+
+.show
+  animation: show_slide 1s ease forwards
+
+.hide
+  animation: hide_slide 1s ease backwards
+
+@keyframes show_slide
+  0%
+    transform: translateY(-100%)
+  40%
+    transform: translateY(10%)
+  80%
+    transform: translateY(0%)
+  100%
+    transform: translateY(0px)
+
+@keyframes hide_slide
+  0%
+    transform: translateY(0px)
+  40%
+    transform: translateY(0%)
+  80%
+    transform: translateY(10%)
+  100%
+    transform: translateY(-100%)

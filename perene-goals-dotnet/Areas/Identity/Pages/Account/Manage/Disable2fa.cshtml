@@ -1,25 +1,36 @@
 ﻿@page
 @model Disable2faModel
 @{
-    ViewData["Title"] = "Disable two-factor authentication (2FA)";
+    ViewData["Title"] = "Manager two-factor authentication (2FA)";
     ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
 }
 
+<h3 class="base-title">@ViewData["Title"]</h3>
+
 <partial name="_StatusMessage" for="StatusMessage" />
-<h3>@ViewData["Title"]</h3>
 
-<div class="alert alert-warning" role="alert">
-    <p>
-        <strong>This action only disables 2FA.</strong>
-    </p>
-    <p>
-        Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key
-        used in an authenticator app you should <a asp-page="./ResetAuthenticator">reset your authenticator keys.</a>
-    </p>
+<div class="info" role="region">
+    <div class="info__icon"></div>
+    <div class="info__content info__content--center">
+        <p>
+             <strong>This action only disables 2FA.</strong>
+        </p>
+        <p>
+            If you lose your device and don't have the recovery codes you will lose access to your account.
+        </p>
+        <p>
+           Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key
+        used in an authenticator app you should <a class="link" asp-page="./ResetAuthenticator">reset your authenticator keys.</a>
+        </p>
+    </div>
 </div>
 
-<div>
-    <form method="post">
-        <button class="btn btn-danger" type="submit">Disable 2FA</button>
-    </form>
-</div>
+<form method="post">
+    <button  type="submit" class="base-button base-button__light">
+        <div class="base-button__content"> 
+            <label> Disable 2FA </label>
+            <div class="base-button__icon base-button__icon--next"> </div>
+        </div>
+    </button>
+</form>
+

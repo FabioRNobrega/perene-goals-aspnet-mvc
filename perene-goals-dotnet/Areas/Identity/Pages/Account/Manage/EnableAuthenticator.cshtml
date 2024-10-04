@@ -5,8 +5,8 @@
     ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
 }
 
-<partial name="_StatusMessage" for="StatusMessage" />
 <h3 class="base-title">@ViewData["Title"]</h3>
+<partial name="_StatusMessage" for="StatusMessage" />
 
 <p class="base-text base-text__no-intent">To use an authenticator app go through the following steps:</p>
 <p class="base-text base-text__no-intent">
@@ -34,7 +34,7 @@
     <button type="submit" class="base-button base-button__light">
         <div class="base-button__content"> 
             <label>     Verify Code</label>
-            <div class="base-button__icon base-button__icon--login"> </div>
+            <div class="base-button__icon base-button__icon--next"> </div>
         </div>
     </button>
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>

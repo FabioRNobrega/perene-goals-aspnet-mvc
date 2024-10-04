@@ -5,20 +5,29 @@
     ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
 }
 
+<h3 class="base-title">@ViewData["Title"]</h3>
+
 <partial name="_StatusMessage" for="StatusMessage" />
-<h3>@ViewData["Title"]</h3>
-<div class="alert alert-warning" role="alert">
-    <p>
-        <span class="glyphicon glyphicon-warning-sign"></span>
-        <strong>If you reset your authenticator key your authenticator app will not work until you reconfigure it.</strong>
-    </p>
-    <p>
-        This process disables 2FA until you verify your authenticator app.
-        If you do not complete your authenticator app configuration you may lose access to your account.
-    </p>
+
+<div class="info" role="region">
+    <div class="info__icon"></div>
+    <div class="info__content info__content--center">
+        <p>
+            <strong>If you reset your authenticator key your authenticator app will not work until you reconfigure it.</strong>
+        </p>
+        <p>
+            This process disables 2FA until you verify your authenticator app.
+            If you do not complete your authenticator app configuration you may lose access to your account.
+        </p>
+    </div>
 </div>
-<div>
-    <form id="reset-authenticator-form" method="post">
-        <button id="reset-authenticator-button" class="btn btn-danger" type="submit">Reset authenticator key</button>
-    </form>
-</div>
+
+<form id="reset-authenticator-form" method="post">
+    <button id="reset-authenticator-button" type="submit" class="base-button base-button__light">
+        <div class="base-button__content"> 
+            <label> Reset authenticator key </label>
+            <div class="base-button__icon base-button__icon--next"> </div>
+        </div>
+    </button>
+</form>
+

@@ -14,23 +14,25 @@
                     <div class="bottom-navbar__button--icon bottom-navbar__button--icon-home">   </div>
                 </div>
             </a>
-        } else {
-            @if (SignInManager.IsSignedIn(User))
-            {
-                <a asp-area="" asp-controller="Home" asp-action="Index">
-                    <div class="bottom-navbar__button">
-                        <div class="bottom-navbar__button--icon bottom-navbar__button--icon-plus">   </div>
-                    </div>
-                </a>
-            }
-            else
-            {
-            <a asp-area="Identity" asp-page="/Account/Login">
+        } 
+
+        @if (currentPath == "/")
+        {
+            <a asp-area="" asp-controller="Home" asp-action="Index">
                 <div class="bottom-navbar__button">
                     <div class="bottom-navbar__button--icon bottom-navbar__button--icon-plus">   </div>
                 </div>
             </a>
-            }
         }
+
+        @if (SignInManager.IsSignedIn(User) && currentPath.ToString().StartsWith("/Identity/Account/Manage")){
+            <a asp-area="" asp-controller="Home" asp-action="Index">
+                <div class="bottom-navbar__button">
+                    <div class="bottom-navbar__button--icon bottom-navbar__button--icon-home">   </div>
+                </div>
+            </a>
+        }
+
+    
     </div>
 </footer>

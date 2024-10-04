@@ -1,26 +1,28 @@
 ﻿@page
 @model PersonalDataModel
 @{
-    ViewData["Title"] = "Personal Data";
+    ViewData["Title"] = "Manager Personal Data";
     ViewData["ActivePage"] = ManageNavPages.PersonalData;
 }
 
-<h3>@ViewData["Title"]</h3>
+<h3 class="base-title">@ViewData["Title"]</h3>
 
-<div class="row">
-    <div class="col-md-6">
-        <p>Your account contains personal data that you have given us. This page allows you to download or delete that data.</p>
-        <p>
-            <strong>Deleting this data will permanently remove your account, and this cannot be recovered.</strong>
-        </p>
-        <form id="download-data" asp-page="DownloadPersonalData" method="post">
-            <button class="btn btn-primary" type="submit">Download</button>
-        </form>
-        <p>
-            <a id="delete" asp-page="DeletePersonalData" class="btn btn-danger">Delete</a>
-        </p>
-    </div>
-</div>
+
+<p class="base-text base-text__no-intent">Your account contains personal data that you have given us. This page allows you to download or delete that data.</p>
+<p class="base-text base-text__no-intent">
+    <strong>Deleting this data will permanently remove your account, and this cannot be recovered.</strong>
+</p>
+<form id="download-data" asp-page="DownloadPersonalData" method="post">
+    <button class="base-button base-button__light" type="submit">
+        <div class="base-button__content"> 
+            <label> Download </label>
+            <div class="base-button__icon base-button__icon--save"> </div>
+        </div>
+    </button>
+</form>
+<p class="base-text base-text__no-intent">
+    Or <a id="delete" asp-page="DeletePersonalData" class="link">Delete</a> permanently your account.
+</p>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
