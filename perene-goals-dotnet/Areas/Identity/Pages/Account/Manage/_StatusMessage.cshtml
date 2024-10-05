@@ -1,6 +1,6 @@
 ﻿@if (!String.IsNullOrEmpty(Model))
 {
-    var statusMessageClass = Model.StartsWith("Error") ? "error show" : "success show";
+    var statusMessageClass = Model.Contains("error") || Model.Contains("invalid") ? "error show" : "success show";
     <div role="alert" class="message message__@statusMessageClass">
         <div class="message__content">
             <div class="message__content--context">

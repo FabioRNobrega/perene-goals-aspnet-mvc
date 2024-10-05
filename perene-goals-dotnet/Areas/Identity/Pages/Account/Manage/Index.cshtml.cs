@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
 
 namespace perene_goals_dotnet.Areas.Identity.Pages.Account.Manage
 {
@@ -16,20 +17,17 @@ namespace perene_goals_dotnet.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(
             UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager)
+            SignInManager<IdentityUser> signInManager,
+            ILogger<IndexModel> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _logger = logger;
         }
-
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
-        public string Username { get; set; }
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -58,6 +56,14 @@ namespace perene_goals_dotnet.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            
+           /// <summary>
+           ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+           ///     directly from your code. This API may change or be removed in future releases.
+           /// </summary>
+           [Display(Name = "Username")]
+           public string Username { get; set; }
         }
 
         private async Task LoadAsync(IdentityUser user)
@@ -65,10 +71,10 @@ namespace perene_goals_dotnet.Areas.Identity.Pages.Account.Manage
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
 
-            Username = userName;
 
             Input = new InputModel
             {
+                Username = userName,
                 PhoneNumber = phoneNumber
             };
         }
@@ -106,6 +112,25 @@ namespace perene_goals_dotnet.Areas.Identity.Pages.Account.Manage
                 if (!setPhoneResult.Succeeded)
                 {
                     StatusMessage = "Unexpected error when trying to set phone number.";
+                    return RedirectToPage();
+                }
+            }
+
+            var username = await _userManager.GetUserNameAsync(user);
+            if (Input.Username != username) 
+            {
+                var setUserNameResult = await _userManager.SetUserNameAsync(user, Input.Username);
+                if (!setUserNameResult.Succeeded)
+                {   
+                     _logger.LogInformation("Resultado do SetUserNameAsync: {Resultado}", System.Text.Json.JsonSerializer.Serialize(setUserNameResult)); 
+                    if (setUserNameResult.Errors.Count() > 0)
+                    {
+                        StatusMessage = setUserNameResult.Errors.First().Description;
+                    }
+                    else
+                    {
+                        StatusMessage = "Unexpected error when trying to set user name.";
+                    }
                     return RedirectToPage();
                 }
             }
