@@ -12,10 +12,10 @@
 <form id="profile-form" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="input-container">
-        <input asp-for="Input.Username" class="input-text"/>
+        <input asp-for="Input.Username" placeholder="User Name" class="input-text"/>
     </div>
     <div class="input-container">
-        <input asp-for="Input.PhoneNumber" class="input-text" />
+        <input asp-for="Input.PhoneNumber" placeholder="Phone Number" class="input-text" />
         <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
     </div>
     <button id="update-profile-button" type="submit" class="base-button base-button__light">
