@@ -29,7 +29,19 @@ $ dotnet run
 ```
 
 ```
-http://localhost:5156/
+http://localhost:5000/
+```
+
+### Running migrations 
+
+```
+dotnet ef migrations add MigrationName
+```
+
+#### Update DataBase 
+
+```
+dotnet ef database update
 ```
 
 
