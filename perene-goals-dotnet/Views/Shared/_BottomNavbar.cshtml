@@ -7,32 +7,32 @@
 
    
 <footer >
-    <div class="bottom-navbar">
-        @if(currentPath == "/Identity/Account/Login"){
-            <a asp-area="" asp-controller="Home" asp-action="Index">
-                <div class="bottom-navbar__button">
-                    <div class="bottom-navbar__button--icon bottom-navbar__button--icon-home">   </div>
-                </div>
-            </a>
-        } 
+    @if(currentPath != "/learning"){
+        <div class="bottom-navbar">
+            @if(currentPath == "/Identity/Account/Login"){
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <div class="bottom-navbar__button">
+                        <div class="bottom-navbar__button--icon bottom-navbar__button--icon-home">   </div>
+                    </div>
+                </a>
+            } 
 
-        @if (currentPath == "/")
-        {
-            <a asp-area="" asp-controller="Home" asp-action="Index">
-                <div class="bottom-navbar__button">
-                    <div class="bottom-navbar__button--icon bottom-navbar__button--icon-plus">   </div>
-                </div>
-            </a>
-        }
+            @if (currentPath == "/")
+            {
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <div class="bottom-navbar__button">
+                        <div class="bottom-navbar__button--icon bottom-navbar__button--icon-plus">   </div>
+                    </div>
+                </a>
+            }
 
-        @if (SignInManager.IsSignedIn(User) && currentPath.ToString().StartsWith("/Identity/Account/Manage")){
-            <a asp-area="" asp-controller="Home" asp-action="Index">
-                <div class="bottom-navbar__button">
-                    <div class="bottom-navbar__button--icon bottom-navbar__button--icon-home">   </div>
-                </div>
-            </a>
-        }
-
-    
-    </div>
+            @if (SignInManager.IsSignedIn(User) && currentPath.ToString().StartsWith("/Identity/Account/Manage")){
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <div class="bottom-navbar__button">
+                        <div class="bottom-navbar__button--icon bottom-navbar__button--icon-home">   </div>
+                    </div>
+                </a>
+            }
+        </div>
+    }
 </footer>

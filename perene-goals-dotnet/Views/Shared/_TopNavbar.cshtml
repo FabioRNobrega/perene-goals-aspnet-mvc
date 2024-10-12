@@ -30,8 +30,12 @@
                         <div class="svg-icon circle__right--icon-exit"></div>
                     </a>
                 </form>
-            } else {
+            } else if (currentPath == "/learning"){
                 <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <div class="svg-icon circle__right--icon-home"></div>
+                </a>
+            } else {
+                <a asp-area="" asp-controller="Learning" asp-action="Index">
                     <div class="svg-icon circle__right--icon-learning"></div>
                 </a>
             }

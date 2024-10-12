@@ -1,0 +1,77 @@
+
+@import "./_variables"
+@import "./_mixins"
+
+.card-steps
+    border-radius: 5px
+    background-color: var(--secondary)
+    padding: 52px 20px 20px
+    text-align: center
+    position: relative
+    margin-top: 60px
+    @include tablets-and-up
+        flex: 1
+        margin: 60px 10px 0px 10px
+
+    &__circle
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 90px
+        height: 90px
+        background: var(--primary)
+        box-shadow: inset 0px 0px 7px 3px var(--primary-light), 0px 0px 10px var(--secondary)
+        border-radius: 100%
+        justify-content: center
+        align-items: center
+        overflow: hidden
+        @include display-row
+
+        &--icon
+            width: 50px
+            height: 50px
+            vertical-align: -0.15em
+            fill: var(--secondary)
+            overflow: hidden
+            background-color: var(--secondary)
+            display: inline-block
+
+            &-plus
+                mask: url('/public/svg/plus.svg') no-repeat 50% 50%
+                -webkit-mask-image: url('/public/svg/plus.svg') no-repeat 50% 50%
+
+            &-list
+                mask: url('/public/svg/list.svg') no-repeat 50% 50%
+                -webkit-mask-image: url('/public/svg/list.svg') no-repeat 50% 50%
+
+            &-steps
+                mask: url('/public/svg/steps.svg') no-repeat 50% 50%
+                -webkit-mask-image: url('/public/svg/steps.svg') no-repeat 50% 50%
+
+            &-finish
+                mask: url('/public/svg/finish.svg') no-repeat 50% 50%
+                -webkit-mask-image: url('/public/svg/finish.svg') no-repeat 50% 50%
+
+    &__title
+        font-family: var(--font-family-title)
+        color: var(--neutral-color-light)
+        font-size: 30px
+        font-weight: 700
+        margin: 10px 0
+        text-transform: capitalize
+
+    &__description
+        font-family: var(--font-family-base)
+        color: var(--neutral-color-light)
+
+        & p
+            text-align: left
+            margin: 20px 0
+            line-height: 1.5em
+            font-size: 16px
+
+.card-steps_list
+    @include display-col
+    @include tablets-and-up
+        @include display-row

@@ -1,0 +1,211 @@
+@model IEnumerable<perene_goals_dotnet.Models.Learning>
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Tab"] = true;
+}
+
+
+  <div class="base-container">
+    <h1 class="base-title"> @ViewData["Title"] </h1>
+
+    <p class="base-text">
+      Welcome to the Learning page of Perene Goals, where we provide valuable insights 
+      and resources to help you make the most of our app. In the 'Learning How to Use 
+      Perene Goals' section,<strong> we'll guide you through the process of harnessing the power 
+      of breaking goals into small steps, enabling you to achieve remarkable results </strong>. 
+      Our proven methodology, combined with the seamless user experience of Perene Goals, 
+      will empower you to turn your dreams into reality.
+    </p>
+    <p class="base-text">
+      But that's not all. In the 'Know More About Personal Goals' section, we take it a 
+      step further. We understand that personal growth encompasses various aspects of 
+      life, including books, movies, and podcasts. <strong>  We've curated a collection of inspiring 
+      and thought-provoking resources that delve into the world of personal goals </strong>. As avid 
+      believers in our own methodology, we've personally experienced the transformation 
+      effects of breaking goals down into manageable steps. Now, we want to share with you 
+      the works that have inspired us along the way.
+    </p>
+
+    <div class="tabs__container">
+        <button id="LearningButton" class="tabs__button base-button ">
+            <div class="base-button__content"> 
+                <label> Learning how to use Perene Goals </label>
+            </div>
+        </button>
+
+        <button id="KnowMoreButton" class="tabs__button base-button">
+            <div class="base-button__content"> 
+                <label> Know more about Personal Goals </label>
+            </div>
+        </button>
+    </div>
+
+
+    <section id="LearningTab">
+        <div class="card-steps_list">
+            <div class="card-steps">
+                <div class="card-steps__circle">
+                    <div class="card-steps__circle--icon card-steps__circle--icon-list"> </div>
+                </div>
+                <h2 class="card-steps__title"> Create a Goal list </h2>
+                <div class="card-steps__description">
+                    <p> 
+                        Creating a goal list is incredibly easy with Perene Goals. 
+                        It allows you to organize your aspirations, dreams, and 
+                        ambitions in one place. By having a clear and well-defined 
+                        list, you gain focus and direction in pursuing your goals. 
+                        Remember, every great achievement starts with a simple list. 
+                        Start now and watch your dreams take shape!
+                    </p>
+                </div>
+            </div>
+            <div class="card-steps">
+                <div class="card-steps__circle">
+                    <div class="card-steps__circle--icon card-steps__circle--icon-plus"> </div>
+                </div>
+                <h2 class="card-steps__title"> Create a Goal </h2>
+                <div class="card-steps__description">
+                    <p> 
+                        Setting a goal is the second step towards turning your 
+                        dreams into reality. With Perene Goals, you can effortlessly 
+                        create goals that align with your aspirations. Whether it's a 
+                        personal, professional, or health-related goal, Perene Goals 
+                        provides a user-friendly platform to articulate your objectives. 
+                        Take that first step towards greatness and let Perene 
+                        Goals be your guide.
+                    </p>
+                </div>
+            </div>
+            <div class="card-steps">
+                <div class="card-steps__circle">
+                    <div class="card-steps__circle--icon card-steps__circle--icon-steps"> </div>
+                </div>
+                <h2 class="card-steps__title"> Break your Goals into Steps </h2>
+                <div class="card-steps__description">
+                    <p> 
+                        One of the keys to achieving success is breaking your goals 
+                        into manageable steps. Perene Goals empowers you to break down 
+                        your goals into smaller, actionable steps. This approach not 
+                        only makes your goals more attainable but also allows you to 
+                        track your progress and celebrate milestones along the way. 
+                        Embrace the power of breaking goals into steps and witness 
+                        the incredible transformation it brings to your journey.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-steps">
+            <div class="card-steps__circle">
+                <div class="card-steps__circle--icon card-steps__circle--icon-finish"> </div>
+            </div>
+            <h2 class="card-steps__title"> Achieve Wonders </h2>
+            <div class="card-steps__description">
+                <p> 
+                    It's time to embark on a journey of endless possibilities. 
+                    With Perene Goals as your companion, you can achieve wonders 
+                    beyond your imagination. Believe in yourself, set ambitious goals, 
+                    and let Perene Goals guide you towards extraordinary accomplishments. 
+                    Don't wait for tomorrow—start today and witness the incredible 
+                    transformation that occurs when you turn your dreams into goals. 
+                    The future holds wonders for those who take action now.
+                </p>
+                <button class="base-button base-button__light">
+                    <div class="base-button__content"> 
+                        <label>  Create a list of goals now </label>
+                        <div class="base-button__icon base-button__icon--plus"> </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section> 
+
+    <section id="KnowMoreTab">
+        <p class="base-text">
+          <strong>Welcome to the 'Know More About Personal Goals' section, where we dive into 
+          the transformative power of books, movies, and podcasts in conjunction with 
+          the remarkable Perene Goals app </strong>. As the creator of Perene Goals and a t
+          rue believer in the potential of personal growth, I've witnessed firsthand
+          the profound impact that breaking goals into small steps can have on our lives. 
+          But it doesn't stop there. We understand that personal growth is a multifaceted
+          journey, and that's why we've curated a collection of inspiring resources
+          that complement the principles of Perene Goals.  <strong> These handpicked books, 
+          captivating movies, and enlightening podcasts offer a wealth of knowledge,
+          motivation, and guidance. Together with the seamless experience of Perene Goals,
+          they form an unstoppable force that will propel you towards your personal goals </strong>. 
+          As Alan Mathison Turing once said, 'We can only see a little bit of the future, 
+          but enough to know there is much to do.' Embrace the synergy between Perene Goals 
+          and these invaluable resources, and embark on a journey of personal growth that 
+          will forever change your life."
+        </p>
+
+    
+        @foreach (var item in Model) {
+                        <div class="card">
+                <div class="card__title">
+                    <div class="card-posts__header">
+                        <div>
+                            <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+                            <h5 class="card-posts__header--author">by @Html.DisplayFor(modelItem => item.Author)</h5>
+                            <div class="card-posts__header--description">
+                               @Html.Raw(item.Description)
+                            </div>
+                        </div>
+                        <div>
+                            <a href="@Html.DisplayFor(modelItem => item.ReferenceLink)">
+                                <img class="card-posts__header--image" src="@Html.DisplayFor(modelItem => item.ImageLink)" alt="Click and buy @Html.DisplayFor(modelItem => item.Title)" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card__content">
+                    <a asp-action="Details" asp-route-id="@item.Id">
+                        <button class="base-button base-button__light">
+                            <div class="base-button__content">
+                                <label>Read Post</label>
+                                <div class="base-button__icon base-button__icon--details"></div>
+                            </div>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        }
+
+    
+    </section>
+
+<script>
+  const learningButton = document.getElementById('LearningButton');
+  const knowMoreButton = document.getElementById('KnowMoreButton');
+  const learningTab = document.getElementById('LearningTab');
+  const knowMoreTab = document.getElementById('KnowMoreTab');
+
+  learningButton.classList.add('base-button__light');
+  knowMoreButton.classList.add('base-button__inactive');
+  learningTab.style.display = 'block';
+  knowMoreTab.style.display = 'none';
+
+  learningButton.addEventListener('click', () => {
+    learningTab.style.display = 'block';
+    knowMoreTab.style.display = 'none';
+
+    learningButton.classList.add('base-button__light');
+    learningButton.classList.remove('base-button__inactive');
+
+    knowMoreButton.classList.remove('base-button__light');
+    knowMoreButton.classList.add('base-button__inactive');
+  });
+
+  knowMoreButton.addEventListener('click', () => {
+    knowMoreTab.style.display = 'block';
+    learningTab.style.display = 'none';
+
+    knowMoreButton.classList.add('base-button__light');
+    knowMoreButton.classList.remove('base-button__inactive');
+
+    learningButton.classList.remove('base-button__light');
+    learningButton.classList.add('base-button__inactive');
+  });
+</script>
+</div>

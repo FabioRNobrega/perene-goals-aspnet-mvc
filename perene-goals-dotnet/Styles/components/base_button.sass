@@ -30,6 +30,14 @@
       mask: url('/public/svg/save.svg') no-repeat 50% 50%
       -webkit-mask-image: url('/public/svg/save.svg') no-repeat 50% 50%
 
+    &--plus
+      mask: url('/public/svg/plus.svg') no-repeat 50% 50%
+      -webkit-mask-image: url('/public/svg/plus.svg') no-repeat 50% 50%
+
+    &--details
+      mask: url('/public/svg/details.svg') no-repeat 50% 50%
+      -webkit-mask-image: url('/public/svg/details.svg') no-repeat 50% 50%
+
   &__small
     margin: 0px 5px 0px 5px
     font-size: 11px
@@ -76,6 +84,12 @@
 
     &:hover
       color: var(--primary-light)
+
+  &__inactive
+    width: 100%
+    background-color: var(--primary)
+    color: var(--primary-light)
+    box-shadow: inset 0px 0px 7px 3px var(--primary-light)
 
   &__disabled
     width: 100%
