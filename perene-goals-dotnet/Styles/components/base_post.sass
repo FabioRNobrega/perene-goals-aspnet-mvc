@@ -1,0 +1,42 @@
+@import "./_variables"
+@import "./_mixins"
+
+.post
+  &__header
+    @include display-col
+
+    @include tablets-and-up
+      @include display-row
+
+    &--description
+      font-family: var(--font-family-base)
+      color: var(--secondary)
+
+      p
+        margin: 20px 0
+        text-indent: 20px
+        text-align: justify
+        line-height: 1.5em
+        font-size: 16px
+        font-weight: normal
+        @include tablets-and-up
+          margin: 20px 30px 20px 5px
+
+      h3
+        font-family: var(--font-family-title)
+
+    &--image
+      width: 100%
+      margin-bottom: 20px
+      border-radius: 5px
+      border: 2px solid var(--secondary)
+
+      @include tablets-and-up
+        height: 250px
+        width: 150px
+
+    &--author
+      font-family: var(--font-family-base)
+      font-style: italic
+      font-weight: lighter
+      margin: 10px 0

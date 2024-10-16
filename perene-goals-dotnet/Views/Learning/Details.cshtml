@@ -1,49 +1,28 @@
 @model perene_goals_dotnet.Models.Learning
 
-@{
-    ViewData["Title"] = "Details";
-}
-<div class="base-container"> 
-<h1>Details</h1>
+<section class="base-container">
+    <div class="post__header"> 
+        <div>
+            <h3 class="base-title"> @Html.DisplayFor(model => model.Title) </h3>
+            <h5 class="post__header--author"> by     @Html.DisplayFor(model => model.Author)</h5>
+            <div class="post__header--description"> @Html.Raw(Model.Description)</div>
+        </div>
+        <div>
+            <a href="@Html.DisplayFor(model => model.ReferenceLink)">
+                <img class="post__header--image" src="@Html.DisplayFor(model => model.ImageLink)" alt="Click and buy @Html.DisplayFor(model => model.Title)" />
+            </a>
+            <a href="@Html.DisplayFor(model => model.ReferenceLink)">
+                <button class="base-button base-button__light base-button__small">
+                    <div class="base-button__content">
+                        <label>Buy the book</label>
+                        <div class="base-button__icon base-button__icon--amazon"></div>
+                    </div>
+                </button>
+            </a>
+        </div> 
+    </div>
+</section>
 
-<div>
-    <h4>Learning</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-         @Html.Raw(Model.Description.Replace("\n", ""))
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Author)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ReferenceLink)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ReferenceLink)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageLink)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageLink)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+<div class="base-container"> 
+  
 </div>

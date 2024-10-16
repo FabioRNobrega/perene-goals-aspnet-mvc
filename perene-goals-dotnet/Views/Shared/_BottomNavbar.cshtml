@@ -7,7 +7,7 @@
 
    
 <footer >
-    @if(currentPath != "/learning"){
+    @if(!currentPath.ToString().Contains("Learning")){
         <div class="bottom-navbar">
             @if(currentPath == "/Identity/Account/Login"){
                 <a asp-area="" asp-controller="Home" asp-action="Index">
