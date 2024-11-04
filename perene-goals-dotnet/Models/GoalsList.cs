@@ -11,15 +11,14 @@ public class GoalsList
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public bool IsPublic { get; set; }
-    public int UserId { get; set; }
+    public string UserId { get; set; } = string.Empty;
 
     // Navigation Properties
-    public IdentityUser User { get; set; } = null!;
     public ICollection<Goal> Goals { get; set; } = new List<Goal>();
     public ICollection<GoalsListVote> GoalsListVotes { get; set; } = new List<GoalsListVote>();
 
     // Clone Method
-    public GoalsList CloneForUser(int newUserId)
+    public GoalsList CloneForUser(string newUserId)
     {
         var newGoalList = (GoalsList)this.MemberwiseClone();
         newGoalList.UserId = newUserId;
