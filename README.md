@@ -22,6 +22,20 @@ Table of contents
 $ dotnet build
 ```
 
++ For this project we are using the SQLServer for this propose you can use as docker: 
+
+Adding the official docker image:
+
+```bash
+docker pull mcr.microsoft.com/mssql/server
+```
+
+and runnig by 
+
+```
+docker run --name sqlserver -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=1q2w3e4r@#$" -p 1433:1433 -d mcr.microsoft.com/mssql/server
+```
+
 ## Usage
 
 ```bash
@@ -31,6 +45,7 @@ $ dotnet run
 ```
 http://localhost:5000/
 ```
+
 
 ### Running migrations 
 
