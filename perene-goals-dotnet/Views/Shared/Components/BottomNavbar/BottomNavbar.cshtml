@@ -1,0 +1,24 @@
+   @using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    var currentPath = Context.Request.Path;
+}
+
+   
+<footer >
+    <div class="bottom-navbar">
+        @if(@Model.Action == "button") {
+            <button class="bottom-navbar__button" type="submit" value="@Model.Action">
+                <div class="bottom-navbar__button--icon bottom-navbar__button--icon-@Model.Icon">   </div>
+            </button>
+        } else {
+            <a asp-controller="@Model.Controller" asp-action="@Model.Action" type="submit" value="@Model.Action">         
+                <div class="bottom-navbar__button">
+                    <div class="bottom-navbar__button--icon bottom-navbar__button--icon-@Model.Icon">   </div>
+                </div>
+            </a>
+        }
+
+    </div>
+</footer>

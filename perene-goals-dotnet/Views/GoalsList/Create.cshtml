@@ -6,43 +6,28 @@
 }
 
 
-<div class="base-container"> 
-    @await Component.InvokeAsync("BaseInfo", new {message = @ViewData["InfoMessage"]})
-
-    <h1>Create</h1>
-
-    <h4>GoalsList</h4>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Title" class="control-label"> Title</label>
-                    <input asp-for="Title" class="form-control" />
-                    <span asp-validation-for="Title" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Description" class="control-label"> Description</label>
-                    <input asp-for="Description" class="form-control" />
-                    <span asp-validation-for="Description" class="text-danger"></span>
-                </div>
-                <div class="form-group form-check">
-                    <label class="form-check-label">
-                        <input class="form-check-input" asp-for="IsPublic" type="checkbox" /> @Html.DisplayNameFor(model => model.IsPublic)
-                    </label>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
-            </form>
+<form asp-action="Create">
+    <div class="base-container"> 
+        @await Component.InvokeAsync("BaseInfo", new {message = @ViewData["InfoMessage"]})
+        <div asp-validation-summary="ModelOnly" class="input-error"></div>
+        <div class="input-container">
+            <input asp-for="Title" class="input-text" placeholder="List Title"/>
+            <span asp-validation-for="Title" class="input-error"></span>
+        </div>
+        <div class="input-container">
+            <input asp-for="Description" class="input-text" placeholder="List Descrition" />
+            <span asp-validation-for="Description" class="input-error"></span>
+        </div>
+        <div class="input-container">
+            <input id="checkbox-1"  asp-for="IsPublic" class="input-text input-text__checkbox checkbox-input" type="checkbox" /> 
+            <label for="checkbox-1" class="checkbox-label"> Is Public </label>
         </div>
     </div>
 
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
-</div>
+    @await Component.InvokeAsync("BottomNavbar", new {action="button", icon="next", disabled=true})})
+</form>
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

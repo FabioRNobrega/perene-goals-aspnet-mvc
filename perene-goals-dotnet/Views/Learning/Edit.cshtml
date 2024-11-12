@@ -12,32 +12,32 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="input-error"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
                 <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+                <span asp-validation-for="Title" class="input-error"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
                 <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
+                <span asp-validation-for="Description" class="input-error"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Author" class="control-label"></label>
                 <input asp-for="Author" class="form-control" />
-                <span asp-validation-for="Author" class="text-danger"></span>
+                <span asp-validation-for="Author" class="input-error"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ReferenceLink" class="control-label"></label>
                 <input asp-for="ReferenceLink" class="form-control" />
-                <span asp-validation-for="ReferenceLink" class="text-danger"></span>
+                <span asp-validation-for="ReferenceLink" class="input-error"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ImageLink" class="control-label"></label>
                 <input asp-for="ImageLink" class="form-control" />
-                <span asp-validation-for="ImageLink" class="text-danger"></span>
+                <span asp-validation-for="ImageLink" class="input-error"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

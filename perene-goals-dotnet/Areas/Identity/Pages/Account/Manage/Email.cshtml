@@ -9,7 +9,7 @@
 <partial name="_StatusMessage" for="StatusMessage" />
 
 <form id="email-form" method="post">
-    <div asp-validation-summary="All" class="text-danger"></div>
+    <div asp-validation-summary="All" class="input-error"></div>
     @if (Model.IsEmailConfirmed)
     {
         <div class="input-container display-col">
@@ -35,7 +35,7 @@
     <div class="input-container">
         <input asp-for="Input.NewEmail" class="input-text" placeholder="New Email" aria-required="true" />
     </div>
-    <span asp-validation-for="Input.NewEmail" class="text-danger"></span>
+    <span asp-validation-for="Input.NewEmail" class="input-error"></span>
     <button id="change-email-button" type="submit" asp-page-handler="ChangeEmail" class="base-button base-button__light">
         <div class="base-button__content"> 
             <label> Save Change </label>

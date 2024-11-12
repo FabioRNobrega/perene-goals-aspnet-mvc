@@ -20,6 +20,8 @@
     </div>
 </div>
 
+@await Component.InvokeAsync("BottomNavbar", new {controller = "Home", action = "Index", icon="home"})})
+
 @section Scripts {
     @RenderSection("Scripts", required: false)
 }

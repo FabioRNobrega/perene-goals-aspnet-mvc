@@ -13,7 +13,7 @@
     <div class="card__content">
               <section>
             <form id="account" method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div asp-validation-summary="ModelOnly" class="input-error"></div>
                 <div class="input-container">
                     <input asp-for="Input.Email" class="input-text" autocomplete="username" placeholder="Email" aria-required="true" />
                     <span asp-validation-for="Input.Email" class="input-text_error"></span>

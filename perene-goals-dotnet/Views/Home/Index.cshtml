@@ -12,3 +12,6 @@
         @await Html.PartialAsync("Components/_BaseHero", Model)
     </div>
 </main>
+
+@await Component.InvokeAsync("BottomNavbar", new {controller = "GoalsList", action = "Create", icon="plus"})})
+
