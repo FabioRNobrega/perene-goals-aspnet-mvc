@@ -3,18 +3,12 @@
 @{
     ViewData["Title"] = "Delete Personal Data";
     ViewData["ActivePage"] = ManageNavPages.PersonalData;
+    ViewData["InfoTitle"] = "Deleting this data will permanently remove your account, and this cannot be recovered.";
 }
 
 <h3 class="base-title">@ViewData["Title"]</h3>
 
-<div class="info" role="region">
-    <div class="info__icon"></div>
-    <div class="info__content info__content--center">
-        <p>
-            <strong>Deleting this data will permanently remove your account, and this cannot be recovered.</strong>
-        </p>
-    </div>
-</div>
+@await Component.InvokeAsync("BaseInfo", new {title = @ViewData["InfoTitle"]})
 
 <div>
     <form id="delete-user" method="post">

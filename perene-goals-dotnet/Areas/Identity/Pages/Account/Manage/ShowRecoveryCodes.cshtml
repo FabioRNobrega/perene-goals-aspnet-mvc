@@ -3,23 +3,15 @@
 @{
     ViewData["Title"] = "Recovery codes";
     ViewData["ActivePage"] = "TwoFactorAuthentication";
+    ViewData["InfoTitle"] = "Put these codes in a safe place.";
+    ViewData["InfoMessage"] = new List<string> { "If you lose your device and don't have the recovery codes you will lose access to your account."};
 }
 
 <h3 class="base-title">@ViewData["Title"]</h3>
 
 <partial name="_StatusMessage" for="StatusMessage" />
 
-<div class="info" role="region">
-    <div class="info__icon"></div>
-    <div class="info__content info__content--center">
-        <p>
-            <strong>Put these codes in a safe place.</strong>
-        </p>
-        <p>
-            If you lose your device and don't have the recovery codes you will lose access to your account.
-        </p>
-    </div>
-</div>
+@await Component.InvokeAsync("BaseInfo", new {title = @ViewData["InfoTitle"], message = @ViewData["InfoMessage"], align = "center"})
 
 <div class="display-row" style="justify-content: center;">
     <div class="code">

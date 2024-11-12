@@ -3,27 +3,18 @@
 @{
     ViewData["Title"] = "Manager two-factor authentication (2FA)";
     ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+    ViewData["InfoTitle"] = "This action only disables 2FA.";
+    ViewData["InfoMessage"] = new List<string> { 
+        "If you lose your device and don't have the recovery codes you will lose access to your account.",
+        "Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should <a class='link' href='/Identity/Account/Manage/ResetAuthenticator'> reset your authenticator keys.</a>"
+        };
 }
 
 <h3 class="base-title">@ViewData["Title"]</h3>
 
 <partial name="_StatusMessage" for="StatusMessage" />
 
-<div class="info" role="region">
-    <div class="info__icon"></div>
-    <div class="info__content info__content--center">
-        <p>
-             <strong>This action only disables 2FA.</strong>
-        </p>
-        <p>
-            If you lose your device and don't have the recovery codes you will lose access to your account.
-        </p>
-        <p>
-           Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key
-        used in an authenticator app you should <a class="link" asp-page="./ResetAuthenticator">reset your authenticator keys.</a>
-        </p>
-    </div>
-</div>
+@await Component.InvokeAsync("BaseInfo", new {title = @ViewData["InfoTitle"], message = @ViewData["InfoMessage"], align = "center"})
 
 <form method="post">
     <button  type="submit" class="base-button base-button__light">

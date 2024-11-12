@@ -1,0 +1,12 @@
+@model perene_goals_dotnet.Views.Shared.Components.BaseInfoModel    
+
+<div class="info" role="region">
+    <div class="info__icon"></div>
+    <div class="info__content info__content--@Model.Align">
+            <strong>@Html.Raw(Model.Title)</strong>
+
+            @foreach(var message in Model.Message) {
+                <p> @Html.Raw(@message) </p>
+            }
+    </div>
+</div>

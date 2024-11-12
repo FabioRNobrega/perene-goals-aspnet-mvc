@@ -2,10 +2,13 @@
 
 @{
     ViewData["Title"] = "Create";
+    ViewData["InfoMessage"] =  new List<string> {"A goals list is an effective tool to help you set and achieve your goals. For instance, if you want to read more books, create a list of specific goals, such as the number of books to read per month or year. This will help you organize your ideas and keep track of the books you want to read, making it easier to accomplish your goal."};
 }
 
 
 <div class="base-container"> 
+    @await Component.InvokeAsync("BaseInfo", new {message = @ViewData["InfoMessage"]})
+
     <h1>Create</h1>
 
     <h4>GoalsList</h4>
