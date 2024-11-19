@@ -1,15 +1,15 @@
-@model Tuple<string, string>
+@model perene_goals_dotnet.Views.Shared.Components.BaseHeroModel  
 
 <div class="banner">
     <img class="banner__image" src="~/public/banners/banner.png" alt="Banner Image">
     <div class="banner__overlay">
         <div class="banner__overlay--text">
             <h2 class="banner__overlay--text-quote"> 
-                “<span id="quoteText">@Model.Item1</span>”
+                “<span id="quoteText">@Model.Quote</span>”
              </h2>
             <div class="banner__divider"></div>
             <h4 class="banner__overlay--text-author"> 
-                <span id="quoteAuthor">@Model.Item2</span>
+                <span id="quoteAuthor">@Model.Author</span>
             </h4>
         </div>
     </div>

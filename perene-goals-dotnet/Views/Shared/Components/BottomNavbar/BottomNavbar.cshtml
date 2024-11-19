@@ -1,11 +1,3 @@
-   @using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-
-@{
-    var currentPath = Context.Request.Path;
-}
-
-   
 <footer >
     <div class="bottom-navbar">
         @if(@Model.Action == "button") {

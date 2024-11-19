@@ -1,7 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Perene Goals";
 }
-    @model Tuple<string, string>
 
 <main class="base-container">
     <div class="hero">
@@ -9,7 +8,7 @@
     </div>
 
     <div>
-        @await Html.PartialAsync("Components/_BaseHero", Model)
+        @await Component.InvokeAsync("BaseHero", new { Quote = "A goal without a plan is just a wish", Author = "Antoine de Saint-Exupéry"})
     </div>
 </main>
 
